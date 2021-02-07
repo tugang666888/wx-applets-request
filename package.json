@@ -1,0 +1,11 @@
+{
+    "name": "wx-applets-request",
+    "version": "1.0.0",
+    "description": "微信小程序请求封装",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "tugang666888",
+    "license": "ISC"
+}
