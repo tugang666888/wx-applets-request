@@ -7,7 +7,7 @@ npm install @wx-applets-request
 ## 导入
 
 ```js
-// 按需导入 $http 对象
+// 按需导入 $http 对象 在微信的app.js文件中引入
 import { $http } from '@wx-applets-request'
 
 // 将按需导入的 $http 挂载到 wx 顶级对象之上，方便全局调用
@@ -22,17 +22,17 @@ uni.$http = $http
 ### 支持的请求方法
 
 ```js
-// 发起 GET 请求，data 是可选的参数对象
-wx.$http.get(url, data?)
+// 发起 GET 请求，data 是可选的参数对象 可以使用es6解构赋值
+const { data:res } = wx.$http.get(url, data?)
 
 // 发起 POST 请求，data 是可选的参数对象
-wx.$http.post(url, data?)
+const { data:res } = wx.$http.post(url, data?)
 
 // 发起 PUT 请求，data 是可选的参数对象
-wx.$http.put(url, data?)
+const { data:res } = wx.$http.put(url, data?)
 
 // 发起 DELETE 请求，data 是可选的参数对象
-wx.$http.delete(url, data?)
+const { data:res } = wx.$http.delete(url, data?)
 ```
 
 ### 配置请求根路径
@@ -64,11 +64,11 @@ $http.beforeRequest = function (options) {
 例 2，自定义 header 请求头：
 
 ```js
-// 请求开始之前做一些事情
+// 请求开始之前做一些事情 类似vue的请求拦截器
 $http.beforeRequest = function (options) {
   if (options.url.indexOf('/home/catitems') !== -1) {
     options.header = {
-      'X-Test': 'AAA',
+      'X-Access-Token': 'AAA',
     }
   }
 }
