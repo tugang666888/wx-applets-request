@@ -6,6 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "keywords": ["request", "wx", "weixin", "xiaochengxu", "qingqiu"],
     "repository": {
         "type": "git",
         "url": "git@github.com:tugang666888/wx-applets-request.git"
