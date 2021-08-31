@@ -1,7 +1,7 @@
 ## 安装
 
 ```bash
-npm install @wx-applets-request
+npm install wx-applets-request
 ```
 
 ## 导入
@@ -9,6 +9,9 @@ npm install @wx-applets-request
 ```js
 // 按需导入 $http 对象 在微信的app.js文件中引入
 import { $http } from '@wx-applets-request'
+
+// 在uniapp项目中 需要将wx-applets-request包放到与pages平级处，在main.js中引入
+import { $http } from 'wx-applets-request'
 
 // 将按需导入的 $http 挂载到 wx 顶级对象之上，方便全局调用
 wx.$http = $http
@@ -23,22 +26,23 @@ uni.$http = $http
 
 ```js
 // 主要在微信开发者工具内使用，简化微信小程序发送请求
+// 如果使用异步请求 需要在函数前使用async，在wx.$http.get(url, data)前使用await
 ```
 
 ### 支持的请求方法
 
 ```js
 // 发起 GET 请求，data 是可选的参数对象 可以使用es6解构赋值
-const { data:res } = wx.$http.get(url, data?)
+const { data:res } = wx.$http.get(url, data)
 
 // 发起 POST 请求，data 是可选的参数对象
-const { data:res } = wx.$http.post(url, data?)
+const { data:res } = wx.$http.post(url, data)
 
 // 发起 PUT 请求，data 是可选的参数对象
-const { data:res } = wx.$http.put(url, data?)
+const { data:res } = wx.$http.put(url, data)
 
 // 发起 DELETE 请求，data 是可选的参数对象
-const { data:res } = wx.$http.delete(url, data?)
+const { data:res } = wx.$http.delete(url, data)
 ```
 
 ### 配置请求根路径
