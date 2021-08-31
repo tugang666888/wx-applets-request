@@ -8,7 +8,7 @@ npm install wx-applets-request
 
 ```js
 // 按需导入 $http 对象 在微信的app.js文件中引入
-import { $http } from '@wx-applets-request'
+import { $http } from 'wx-applets-request'
 
 // 在uniapp项目中 需要将wx-applets-request包放到与pages平级处，在main.js中引入
 import { $http } from 'wx-applets-request'
